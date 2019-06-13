@@ -64,8 +64,7 @@ public class LoginController extends BaseController {
                 }
             }
             Cookie[] cookies = request.getCookies();
-            for (int i = 0; i < cookies.length; i++) {
-                Cookie cookie = cookies[i];
+            for (Cookie cookie : cookies) {
                 if (cookie.getName().equals(ADMIN_LOGIN_COOKIE_KEY)) {
                     try {
                         JSONObject loginJsonObj = JSONObject.parseObject(cookie.getValue());
